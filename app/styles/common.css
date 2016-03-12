@@ -9,11 +9,17 @@ body {
 	background-color: #f2f2f2;
 }
 
-.color-fff {
+.color-white {
 	color: #fff;
 }
-.color-000 {
+.color-black {
 	color: #000;
+}
+.color-light-grey-one {
+	color: #f4f4f4;
+}
+.color-light-grey-two {
+	color: #dedede;
 }
 .color-b71c1c {
 	color: #b71c1c;
@@ -22,7 +28,7 @@ body {
 	color: #212121;
 }
 
-.background-color-212121 {
+.background-color-grey {
 	background-color: #212121;
 }
 .background-color-b71c1c {
