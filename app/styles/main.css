@@ -1,5 +1,24 @@
 #book-a-service {
+	/* fallback */
+  background-color: #f2f2f2;
+  
+  /* Default syntax */
+  background: linear-gradient(to bottom, #f2f2f2, #dedede);
 
+  /* Safari 4-5, Chrome 1-9 */
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#dedede), to(#f2f2f2));
+
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(top, #f2f2f2, #dedede);
+
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(top, #f2f2f2, #dedede);
+
+  /* IE 10 */
+  background: -ms-linear-gradient(top, #f2f2f2, #dedede);
+
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, #f2f2f2, #dedede);
 }
 
 #services-nav {
