@@ -10,24 +10,64 @@
 angular.module('indiaworks16App')
   .controller('MainCtrl', function ($scope, GeoLocationService) {
 
+    $scope.selectedCategory = "";
+    $scope.selectedSubCat = "";
     $scope.selectedService = "";
-    $scope.servicesList = [{
+    $scope.selectedArea = "";
+
+    $scope.checkSelectCategory = false;
+
+    $scope.categoryList = [{
+      'name': 'Cat 1',
+      '_id': 'cat_one'
+    },
+    {
+      'name': 'Cat 2',
+      '_id': 'cat_two'
+    },
+    {
+      'name': 'Cat 3',
+      '_id': 'cat_three'
+    },
+    {
+      'name': 'Cat 4',
+      '_id': 'cat_four'
+    }];
+
+    $scope.subCatList = [{
+      'name': 'SubCat 1',
+      '_id': 'subcat_one'
+    },
+    {
+      'name': 'SubCat 2',
+      '_id': 'subcat_two'
+    },
+    {
+      'name': 'SubCat 3',
+      '_id': 'subcat_three'
+    },
+    {
+      'name': 'SubCat 4',
+      '_id': 'subcat_four'
+    }];
+
+    $scope.serviceList = [{
       'name': 'Service 1',
-      '_id': 'one'
+      '_id': 'service_one'
     },
     {
       'name': 'Service 2',
-      '_id': 'two'
+      '_id': 'service_two'
     },
     {
       'name': 'Service 3',
-      '_id': 'three'
+      '_id': 'service_three'
     },
     {
       'name': 'Service 4',
-      '_id': 'four'
-    }];
-    
+      '_id': 'service_four'
+    }];    
+
     $scope.changeServiceHoverImage = function () {
     	document.getElementById("serviceName").src="images/plumbing-01-onhover-01.png";
     };
@@ -38,7 +78,12 @@ angular.module('indiaworks16App')
 
     $scope.keyPress = function (clickEvent) {
       if(clickEvent.keyCode === 13) {
-        
+        if($scope.selectedCategory._id) {
+          $scope.checkSelectCategory = true;
+        } else {
+          // Put error message here
+          
+        }
       }
     };
 
