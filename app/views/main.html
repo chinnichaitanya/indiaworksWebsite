@@ -73,10 +73,22 @@
   </div>
 </div>
 
+<!-- 
 <div class="container-fluid service-container padding-top-2 padding-right-2 padding-bottom-2 padding-left-2">
   <service-template></service-template>
   <service-template></service-template>
   <service-template></service-template>
   <service-template></service-template>
 </div>
+ -->
+
+<!-- 
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" ng-repeat="service in sampleServices track by $index" ng-init="service.displayImg=service.originalImg" ng-mouseover="service.displayImg=service.hoverImg" ng-mouseout="service.displayImg=service.originalImg">
+      <img class="img-responsive" ng-src="{{ service.displayImg }}" alt="{{ service.name }}">
+    </div>
+  </div>
+</div>
+ -->
 

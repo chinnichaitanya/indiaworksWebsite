@@ -8,7 +8,8 @@
  * Controller of the indiaworks16App
  */
 angular.module('indiaworks16App')
-  .controller('MainCtrl', function ($scope, GeoLocationService) {
+  .controller('MainCtrl', function ($scope) {
+  // .controller('MainCtrl', function ($scope, GeoLocationService) {
 
     $scope.selectedCategory = "";
     $scope.selectedSubCat = "";
@@ -68,6 +69,42 @@ angular.module('indiaworks16App')
       '_id': 'service_four'
     }];    
 
+    $scope.sampleServices = [{
+      'name': 'Service 1',
+      'originalImg': 'images/plumbing-01-01.png',
+      'hoverImg': 'images/plumbing-01-onhover-01.png'
+    },
+    {
+      'name': 'Service 1',
+      'originalImg': 'images/plumbing-01-01.png',
+      'hoverImg': 'images/plumbing-01-onhover-01.png'
+    },
+    {
+      'name': 'Service 1',
+      'originalImg': 'images/plumbing-01-01.png',
+      'hoverImg': 'images/plumbing-01-onhover-01.png'
+    },
+    {
+      'name': 'Service 1',
+      'originalImg': 'images/plumbing-01-01.png',
+      'hoverImg': 'images/plumbing-01-onhover-01.png'
+    },
+    {
+      'name': 'Service 1',
+      'originalImg': 'images/plumbing-01-01.png',
+      'hoverImg': 'images/plumbing-01-onhover-01.png'
+    },
+    {
+      'name': 'Service 1',
+      'originalImg': 'images/plumbing-01-01.png',
+      'hoverImg': 'images/plumbing-01-onhover-01.png'
+    },
+    {
+      'name': 'Service 1',
+      'originalImg': 'images/plumbing-01-01.png',
+      'hoverImg': 'images/plumbing-01-onhover-01.png'
+    }];
+
     $scope.changeServiceHoverImage = function () {
     	document.getElementById("serviceName").src="images/plumbing-01-onhover-01.png";
     };
@@ -87,9 +124,9 @@ angular.module('indiaworks16App')
       }
     };
 
-    GeoLocationService.getCurrentLocation().then(function (onUserLocationFound) {
-    	var x = onUserLocationFound;
-    	console.log(x);
-    });
+    // GeoLocationService.getCurrentLocation().then(function (onUserLocationFound) {
+    // 	var x = onUserLocationFound;
+    // 	console.log(x);
+    // });
 
   });
