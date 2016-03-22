@@ -28,8 +28,9 @@
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #ffffff;
-  background-color: #b71c1c;
+  color: #b71c1c;
+  /*background-color: #b71c1c;*/
+  border-bottom: 5px solid #b71c1c;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,

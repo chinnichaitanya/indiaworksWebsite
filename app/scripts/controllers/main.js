@@ -17,6 +17,7 @@ angular.module('indiaworks16App')
     $scope.selectedArea = "";
 
     $scope.checkSelectCategory = false;
+    $scope.checkClickBookNow = true;
 
     $scope.categoryList = [{
       'name': 'Cat 1',
