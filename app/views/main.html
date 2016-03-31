@@ -56,15 +56,15 @@
     </div>
     <!-- After selecting the category -->
 
-
   </div>
+
   <!-- After clicking book now -->
   <div ng-show="checkClickBookNow" class="container-fluid">
     <div class="row text-center">
       <h2>Finish your order</h2>
     </div>
 
-    <div class="row">
+    <div class="row book-now-row">
       <div class="text-right col-xs-12 col-sm-4 col-md-4 col-lg-4">
         <h3>When?</h3>
       </div>
@@ -74,24 +74,66 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row book-now-row">
       <div class="text-right col-xs-12 col-sm-4 col-md-4 col-lg-4">
         <h3>Where?</h3>
       </div>
+
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="row">
+          <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <input type="text" class="form-control" placeholder="Name">
+          </div>
+          <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <input type="text" class="form-control" placeholder="House No.">
+          </div>
+          <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <input type="text" class="form-control" placeholder="Street/Address lane 1">
+          </div>
+          <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <input type="text" class="form-control" placeholder="Address lane 2 (if any)">
+          </div>
+          <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <input type="text" class="form-control" placeholder="Landmarks (if any)">
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="row">
+    <div class="row book-now-row">
       <div class="text-right col-xs-12 col-sm-4 col-md-4 col-lg-4">
         <h3>Contact info</h3>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="text-right col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <h3>Additional comments</h3>
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="row">
+          <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <input type="email" class="form-control" placeholder="Email">
+          </div>
+          <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <input type="text" class="form-control" placeholder="Phone No.">
+          </div>
+        </div>
       </div>
     </div>
 
+    <div class="row book-now-row">
+      <div class="text-right col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <h3>Additional comments</h3>
+      </div>
+
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="row">
+          <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <textarea type="text" class="form-control" placeholder="Additional comments (if any)"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <button class="btn btn-danger">Get it done!</button>
+    </div>
   </div>
   <!-- After clicking book now -->
 
