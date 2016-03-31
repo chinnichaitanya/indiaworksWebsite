@@ -7,6 +7,23 @@
 
 body {
 	background-color: #f2f2f2;
+	overflow-x: hidden;
+}
+
+/*
+.image-bottom img {
+	vertical-align: bottom;
+	border:0;
+}
+*/
+.background-color-red {
+	background-color: #b71c1c;
+}
+.background-color-white {
+	background-color: #ffffff;
+}
+.background-color-grey {
+	background-color: #dedede;
 }
 
 .color-white {
@@ -30,6 +47,9 @@ body {
 
 .background-color-grey {
 	background-color: #212121;
+}
+.background-color-grey-two {
+	background-color: #dedede;
 }
 .background-color-b71c1c {
 	background-color: #b71c1c;

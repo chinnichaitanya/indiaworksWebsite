@@ -38,3 +38,44 @@
 .book-now-row {
   padding: 3% 0 3% 0;
 }
+
+div.div-overlap-img {
+  position: relative;
+}
+div.div-overlap-img img {
+  z-index: 1;
+}
+div.div-overlap-img div.triangle-down-right-white, div.div-overlap-img div.triangle-down-right-grey {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+}
+
+.triangle-down-left-white {
+  width: 100%;
+  height: 0;
+  padding-bottom: 10%;
+  overflow: hidden;
+}
+.triangle-down-right-white:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;  
+  border-top: 100px solid transparent;
+  border-right: 1500px solid #ffffff;
+}
+.triangle-down-left-grey {
+  width: 100%;
+  height: 0;
+  padding-bottom: 10%;
+  overflow: hidden;
+}
+.triangle-down-right-grey:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;  
+  border-top: 100px solid transparent;
+  border-right: 1500px solid #dedede;
+}
