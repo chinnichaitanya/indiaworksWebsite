@@ -51,17 +51,17 @@ body {
 .background-color-grey-two {
 	background-color: #dedede;
 }
-.background-color-b71c1c {
+.background-color-grey-three {
+	background-color: #8c8c8c;
+}
+.background-color-red {
 	background-color: #b71c1c;
 }
-.background-color-e6e6e6 {
+.background-color-light-grey-one {
 	background-color: #e6e6e6;
 }
-.background-color-f2f2f2 {
+.background-color-light-grey-two {
 	background-color: #f2f2f2;
-}
-.background-color-8c8c8c {
-	background-color: #8c8c8c;
 }
 
 .padding-top-1 {
