@@ -63,8 +63,8 @@ div.div-overlap-img div.triangle-down-right-white, div.div-overlap-img div.trian
   display: block;
   width: 0;
   height: 0;  
-  border-top: 100px solid transparent;
-  border-right: 1500px solid #ffffff;
+  border-top: 800px solid transparent;
+  border-right: 15000px solid #ffffff;
 }
 .triangle-down-left-grey {
   width: 100%;
@@ -77,6 +77,6 @@ div.div-overlap-img div.triangle-down-right-white, div.div-overlap-img div.trian
   display: block;
   width: 0;
   height: 0;  
-  border-top: 100px solid transparent;
-  border-right: 1500px solid #dedede;
+  border-top: 800px solid transparent;
+  border-right: 15000px solid #dedede;
 }
