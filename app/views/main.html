@@ -1,9 +1,9 @@
 <div id="book-a-service" class="container-fluid color-black padding-bottom-10">
-  <div ng-show="checkSelectCategory" class="row text-center padding-top-2">
+  <div ng-show="!checkSelectCategory" class="row text-center padding-top-2">
     <h2>Get your work done here</h2>
   </div>
   <div class="row text-center padding-top-2">
-    <div ng-show="!checkClickBookNow" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+    <div ng-show="!checkSelectCategory" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
       <p>
         <span class="glyphicon glyphicon-map-marker"></span>
         Current location: Chennai (change)
@@ -12,7 +12,7 @@
 
     <!-- Select the category -->
 
-    <div ng-show="checkSelectCategory" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+    <div ng-show="!checkSelectCategory" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
       <div class="right-inner-addon">
         <input type="text" class="form-control" ng-model="selectedCategory" bs-options="category as category.name for category in categoryList" ng-keypress="keyPress($event)" placeholder="Search for categories..." bs-typeahead autocomplete="off">
         <span class="color-black glyphicon glyphicon-arrow-right"></span>
@@ -22,7 +22,7 @@
     <!-- Select the category -->
 
     <!-- After selecting the category -->
-    <div ng-show="checkSelectCategory" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+    <div ng-show="checkSelectCategory && !checkSelectSubCat" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
       <div class="row padding-bottom-10">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <div class="right-inner-addon">
@@ -49,8 +49,8 @@
       </div>
     </div>
 
-    <div ng-show="checkSelectCategory" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-      <button type="button" class="btn btn-success">
+    <div ng-show="checkSelectCategory && !checkSelectSubCat" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <button type="button" ng-click="gotoBookNow()" class="btn btn-success">
         Proceed&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-arrow-right"></span>
       </button>
     </div>
@@ -59,7 +59,7 @@
   </div>
 
   <!-- After clicking book now -->
-  <div ng-show="checkClickBookNow" class="container-fluid">
+  <div ng-show="checkSelectSubCat" class="container-fluid">
     <div class="row text-center">
       <h2>Finish your order</h2>
     </div>
@@ -72,10 +72,10 @@
       <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
         <div class="row">
           <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <input type="date" class="form-control" placeholder="Date">
+            <input type="date" class="form-control" ng-model="bookDate" placeholder="Date">
           </div>
           <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <input type="time" class="form-control" placeholder="Time">
+            <input type="time" class="form-control" ng-model="bookTime" placeholder="Time">
           </div>
         </div>
       </div>
@@ -89,19 +89,19 @@
       <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
         <div class="row">
           <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <input type="text" class="form-control" placeholder="Name">
+            <input type="text" class="form-control" ng-model="userName" placeholder="Name">
           </div>
           <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <input type="text" class="form-control" placeholder="House No.">
+            <input type="text" class="form-control" ng-model="houseNumber" placeholder="House No.">
           </div>
           <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <input type="text" class="form-control" placeholder="Street/Address lane 1">
+            <input type="text" class="form-control" ng-model="address1" placeholder="Street/Address lane 1">
           </div>
           <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <input type="text" class="form-control" placeholder="Address lane 2 (if any)">
+            <input type="text" class="form-control" ng-model="address2" placeholder="Address lane 2 (if any)">
           </div>
           <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <input type="text" class="form-control" placeholder="Landmarks (if any)">
+            <input type="text" class="form-control" ng-model="landmarks" placeholder="Landmarks (if any)">
           </div>
         </div>
       </div>
@@ -115,10 +115,10 @@
       <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
         <div class="row">
           <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <input type="email" class="form-control" placeholder="Email">
+            <input type="email" class="form-control" ng-model="email" placeholder="Email">
           </div>
           <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <input type="text" class="form-control" placeholder="Phone No.">
+            <input type="text" class="form-control" ng-model="phoneNumber" placeholder="Phone No.">
           </div>
         </div>
       </div>
@@ -132,14 +132,14 @@
       <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
         <div class="row">
           <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <textarea type="text" class="form-control" placeholder="Additional comments (if any)"></textarea>
+            <textarea type="text" class="form-control" ng-model="additionalComments" placeholder="Additional comments (if any)"></textarea>
           </div>
         </div>
       </div>
     </div>
 
     <div class="row text-center">
-      <button class="btn btn-danger">Get it done!</button>
+      <button class="btn btn-danger" ng-click="bookNow()">Get it done!</button>
     </div>
   </div>
   <!-- After clicking book now -->
@@ -165,8 +165,8 @@
     <h2>IndiaWorks is an assisted services platform</h2>
   </div>
   
-  <div class="row padding-top-1">
-    <h3>asdasd a ajkhsd k asjd alj asldj al al alsdjakda ja jasdjla a lasdj lasj lak alksd</h3>
+  <div class="row padding-top-1 padding-left-5 padding-right-5">
+    <h3>set to revolutionize the way you connect to service providers like electricians, tailors, carpenters etc. We're committed to providing the best professionals for your every need, at your doorstep with just a click</h3>
   </div>
 
   <img class="img-responsive" src="images/homepage-how-it-works.png" alt="How it works" />
@@ -177,10 +177,11 @@
   <div class="row padding-left-5 padding-right-5 padding-top-5 padding-bottom-5">
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
       <h2>Simplicity</h2>
-      <h3>sdhasdjka aslkj hkasjh hjaskd hkajsdk hkasjd kjasdk jhaskdjh kajshd jkshdkja hdkjas</ph3>
+      <h3>The ultimate sophistication</h3>
+      <h4>Getting your work done has never been this hassle free. IndiaWoks provides a simple no frills platform to connect you to service providers with just a click. Our streamlined process guarantees your piece of mind throughout even the most trying of problems</h4>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-      <img class="img-responsive" src="images/homepage-how-it-works.png" alt="How it works" />
+      <img class="img-responsive" src="images/homepage-simplicity.png" alt="Simplicity" />
     </div>
   </div>
   <div class="triangle-down-right-grey"></div>
@@ -189,11 +190,12 @@
 <div class="container-fluid div-overlap-img text-right background-color-grey-two color-black">
   <div class="row padding-left-5 padding-right-5 padding-top-5 padding-bottom-5">
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-      <img class="img-responsive" src="images/homepage-how-it-works.png" alt="How it works" />
+      <img class="img-responsive" src="images/homepage-safe.png" alt="Safe and peace of mind" />
     </div>
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-      <h2>Simplicity</h2>
-      <h3>sdhasdjka aslkj hkasjh hjaskd hkajsdk hkasjd kjasdk jhaskdjh kajshd jkshdkja hdkjas</ph3>
+      <h2>Safe</h2>
+      <h3>For your peace of mind</h3>
+      <h4>We partner with passionate people with proven records to ensure the best experience. We have a multistep identity verification and thorough documentation on our partners. Every interaction with our service is also well recorded for complete accountability</h4>
     </div>
   </div>
   <div class="triangle-down-right-white"></div>
@@ -202,8 +204,9 @@
 <div class="container-fluid div-overlap-img text-left background-color-white color-black">
   <div class="row padding-left-5 padding-right-5 padding-top-5 padding-bottom-5">
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-      <h2>Simplicity</h2>
-      <h3>sdhasdjka aslkj hkasjh hjaskd hkajsdk hkasjd kjasdk jhaskdjh kajshd jkshdkja hdkjas</ph3>
+      <h2>Profesional</h2>
+      <h3>Inside and out</h3>
+      <h4>At IndiaWorks, we are committed to providing the absolute best experience for our customers and that means partnering with the best servicemen in every field. We hold our service partners to the highest of standards in professional integrity, conduct and ethics</h4>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
       <img class="img-responsive" src="images/homepage-professional.png" alt="How it works" />
@@ -215,11 +218,12 @@
 <div class="container-fluid div-overlap-img text-right background-color-grey-two color-black">
   <div class="row padding-left-5 padding-right-5 padding-top-5 padding-bottom-5">
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-      <img class="img-responsive" src="images/homepage-how-it-works.png" alt="How it works" />
+      <img class="img-responsive" src="images/homepage-efficiency.png" alt="How it works" />
     </div>
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-      <h2>Simplicity</h2>
-      <h3>sdhasdjka aslkj hkasjh hjaskd hkajsdk hkasjd kjasdk jhaskdjh kajshd jkshdkja hdkjas</ph3>
+      <h2>Efficient</h2>
+      <h3>Faster at every turn</h3>
+      <h4>Behind the scenes, powerful technical jargon manages your service requests and allots the ideal service provider in an unparalleled speed and precision. Going a step beyond, we also assist our service providers at every step to ensure a speedy and complete solution</h4>
     </div>
   </div>
   <!-- <div class="triangle-down-right-white"></div> -->

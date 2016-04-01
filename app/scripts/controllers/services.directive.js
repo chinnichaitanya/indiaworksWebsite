@@ -2,7 +2,7 @@
 
 angular.module('indiaworks16App')
   .directive('serviceTemplate', function () {
-  	return{
+  	return {
   		templateUrl: '../views/services-template.html',
   		// link: function(scope, element, attr) {
   		// 	element.css({
@@ -15,5 +15,5 @@ angular.module('indiaworks16App')
     // 	   		});
     //  		});
     // 	}
-	}
+	 };
   });
