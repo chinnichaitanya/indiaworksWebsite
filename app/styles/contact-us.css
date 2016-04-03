@@ -1,0 +1,33 @@
+#contact-us-div {
+	/*background: -webkit-linear-gradient(top, #b71c1c, #b71c1c 20%, #ffffff 20%, #ffffff);*/
+	
+  /* Default syntax */
+  /*background: linear-gradient(to bottom, #f2f2f2, #dedede);*/
+
+  /* Safari 4-5, Chrome 1-9 */
+  /*background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#dedede), to(#f2f2f2));*/
+
+  /* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #b71c1c, #b71c1c 30%, #ffffff 30%, #ffffff);
+
+  /* Firefox 3.6+ */
+  /*background: -moz-linear-gradient(top, #b71c1c, #b71c1c 20%, #ffffff 20%, #ffffff);*/
+
+  /* IE 10 */
+  /*background: -ms-linear-gradient(top, #b71c1c, #b71c1c 20%, #ffffff 20%, #ffffff);*/
+
+  /* Opera 11.10+ */
+  /*background: -o-linear-gradient(top, #b71c1c, #b71c1c 20%, #ffffff 20%, #ffffff);*/
+
+  background-color: #b71c1c;
+
+	height: 750px;
+}
+
+#get-in-touch-div {
+	background-color: #dedede;
+}
+
+.get-in-touch-border {
+	border-right: 2px solid #8c8c8c;
+}

@@ -3,7 +3,7 @@
     <h2>Get your work done here</h2>
   </div>
   <div class="row text-center padding-top-2">
-    <div ng-show="!checkSelectCategory" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+    <div ng-show="!(checkSelectSubCat && checkSelectCategory)" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
       <p>
         <span class="glyphicon glyphicon-map-marker"></span>
         Current location: Chennai (change)
@@ -141,6 +141,35 @@
     <div class="row text-center">
       <button class="btn btn-danger" ng-click="bookNow()">Get it done!</button>
     </div>
+
+    <!-- Confirmation page -->
+    <div class="container-fluid">
+      <div class="row text-center">
+        <h3>Confirm your order</h3>
+      </div>
+      
+      <div class="row text-left">
+        <h4>Details</h4>
+        <h5>{{ recentTicket.selectedService.name }}</h5>
+        <h5>{{ recentTicket.selectedSubCat.name }}</h5>
+        <h5>{{ recentTicket.selectedCategory.name }}</h5>
+      </div>
+
+      <div class="row text-left">
+        <h4>When</h4>
+        <h5>{{ recentTicket.bookDate }}, {{ recentTicket.bookTime }}</h5>
+        <h5>{{ recentTicket.selectedSubCat.name }}</h5>
+        <h5>{{ recentTicket.selectedCategory.name }}</h5>
+      </div>
+
+      <div class="row text-left">
+        <h4>Est. cost</h4>
+        <h5>Rs. 500</h5>
+      </div>
+    
+    </div>
+    <!-- Confirmation page -->
+
   </div>
   <!-- After clicking book now -->
 
@@ -160,13 +189,13 @@
   </div>
 </div>
 
-<div class="container-fluid div-overlap-img text-center background-color-red color-white">
+<div id="about-us" class="container-fluid div-overlap-img text-center background-color-red color-white">
   <div class="row padding-top-5 padding-bottom-1">
     <h2>IndiaWorks is an assisted services platform</h2>
   </div>
   
-  <div class="row padding-top-1 padding-left-5 padding-right-5">
-    <h3>set to revolutionize the way you connect to service providers like electricians, tailors, carpenters etc. We're committed to providing the best professionals for your every need, at your doorstep with just a click</h3>
+  <div class="row padding-top-1 padding-left-5 padding-right-5 padding-bottom-5">
+    <h3>Set to revolutionize the way you connect to service providers like electricians, tailors, carpenters etc. We're committed to providing the best professionals for your every need, at your doorstep with just a click</h3>
   </div>
 
   <img class="img-responsive" src="images/homepage-how-it-works.png" alt="How it works" />

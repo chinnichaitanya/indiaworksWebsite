@@ -17,12 +17,17 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'mgcrea.ngStrap'
+    'mgcrea.ngStrap',
+    'LocalStorageModule'
   ])
   .config(function ($locationProvider) {
     $locationProvider.html5Mode(false);
     $locationProvider.hashPrefix('!');
   })  
+  .config(function (localStorageServiceProvider) {
+    localStorageServiceProvider
+      .setPrefix('IndiaWorks');
+  })
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -34,6 +39,11 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
+      })
+      .when('/contact-us', {
+        templateUrl: 'views/contact-us.html',
+        controller: 'ContactUsCtrl',
+        controllerAs: 'contact'
       })
       .otherwise({
         redirectTo: '/'

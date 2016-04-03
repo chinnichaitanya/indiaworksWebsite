@@ -8,8 +8,15 @@
  * Controller of the indiaworks16App
  */
 angular.module('indiaworks16App')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function ($scope, localStorageService) {
   // .controller('MainCtrl', function ($scope, GeoLocationService) {
+
+    var tickets = [];
+    if(localStorageService.get('bookedServices')) {
+      tickets = localStorageService.get('bookedServices');
+    } else {
+      tickets = [];
+    }
 
     $scope.selectedCategory = '';
     $scope.selectedSubCat = '';
@@ -45,20 +52,12 @@ angular.module('indiaworks16App')
     }];
 
     $scope.subCatList = [{
-      'name': 'SubCat 1',
+      'name': 'Fan repair',
       '_id': 'subcat_one'
     },
     {
-      'name': 'SubCat 2',
+      'name': 'AC maintenance',
       '_id': 'subcat_two'
-    },
-    {
-      'name': 'SubCat 3',
-      '_id': 'subcat_three'
-    },
-    {
-      'name': 'SubCat 4',
-      '_id': 'subcat_four'
     }];
 
     $scope.serviceList = [{
@@ -143,7 +142,34 @@ angular.module('indiaworks16App')
     };
 
     $scope.bookNow = function () {
-      console.log('yay');
+      var ticket = {};
+      ticket.selectedCategory = $scope.selectedCategory;
+      ticket.selectedSubCat = $scope.selectedSubCat;
+      ticket.selectedService = $scope.selectedService;
+      ticket.selectedArea = $scope.selectedArea;
+
+      ticket.bookDate = $scope.bookDate;
+      ticket.bookTime = $scope.bookTime;
+      ticket.userName = $scope.userName;
+      ticket.houseNumber = $scope.houseNumber;
+      ticket.address1 = $scope.address1;
+      ticket.address2 = $scope.address2;
+      ticket.landmarks = $scope.landmarks;
+      ticket.email = $scope.email;
+      ticket.phoneNumber = $scope.phoneNumber;
+      ticket.additionalComments = $scope.additionalComments;
+
+      tickets.push(ticket);
+
+      console.log(ticket);
+      console.log(tickets);
+
+      localStorageService.set('bookedServices', tickets);
+
+      $scope.checkClickBookNow = true;
+      $scope.recentTicket = ticket;
+
+      alert('Booked successfully');
     };
 
     // GeoLocationService.getCurrentLocation().then(function (onUserLocationFound) {

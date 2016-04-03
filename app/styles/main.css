@@ -25,6 +25,10 @@
   border-bottom: 2px solid #8c8c8c;
 }
 
+#about-us .img-responsive {
+  margin: 0 auto;
+}
+
 .right-inner-addon {
   position: relative;
 }
