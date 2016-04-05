@@ -16,15 +16,6 @@ body {
 	border:0;
 }
 */
-.background-color-red {
-	background-color: #b71c1c;
-}
-.background-color-white {
-	background-color: #ffffff;
-}
-.background-color-grey {
-	background-color: #dedede;
-}
 
 .color-white {
 	color: #fff;
@@ -44,6 +35,9 @@ body {
 .color-grey {
 	color: #212121;
 }
+.color-green {
+
+}
 
 .background-color-grey {
 	background-color: #212121;
@@ -62,6 +56,9 @@ body {
 }
 .background-color-light-grey-two {
 	background-color: #f2f2f2;
+}
+.background-color-green {
+
 }
 
 .padding-top-1 {

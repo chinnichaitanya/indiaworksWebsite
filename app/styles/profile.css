@@ -1,0 +1,35 @@
+.profile-menu {
+	border-right: 2px solid #dedede;
+	cursor: pointer;
+}
+
+.profileActive {
+	color: #b71c1c;
+	border-right: 3px solid #b71c1c;
+}
+
+.yyy {
+	padding : 0;
+}
+.xxx {
+	padding: 10% 0 10% 0;
+	background-color: black;
+}
+.zzz {
+	padding: 5% 0 5% 0;
+	background-color: red;
+}
+.lol-image img {
+	width: 100%;
+}
+.lol-image {
+	position: absolute;
+	margin-top: -4%;
+	right: 46%;
+	background-color: blue;
+
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	overflow: hidden;
+}

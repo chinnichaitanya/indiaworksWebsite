@@ -26,8 +26,11 @@
 
 #get-in-touch-div {
 	background-color: #dedede;
+  border: 1px solid rgba(33, 33, 33, 0.5);
 }
 
 .get-in-touch-border {
 	border-right: 2px solid #8c8c8c;
 }
+
+/*Add media queries for .get-in-touch-border*/
