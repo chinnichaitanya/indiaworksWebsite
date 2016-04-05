@@ -1,0 +1,154 @@
+<div class="container-fluid color-black padding-bottom-10 row text-center padding-top-2 padding-bottom-2">
+
+  <div ng-show="!(checkSelectSubCat)" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+    <p>
+      <span class="glyphicon glyphicon-map-marker"></span>
+        Current location: Chennai (change)
+    </p>
+  </div>
+
+  <div ng-show="!checkSelectSubCat" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+    <div class="row padding-bottom-10">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="right-inner-addon">
+          <input type="text" class="form-control" ng-model="selectedSubCat" bs-options="subCat as subCat.name for subCat in subCatList" placeholder="Search for sub-categories..." bs-typeahead autocomplete="off">
+          <span class="color-black glyphicon glyphicon-arrow-right"></span>
+        </div>
+      </div>
+    </div>
+    <div class="row padding-bottom-10">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="right-inner-addon">
+          <input type="text" class="form-control" ng-model="selectedService" bs-options="service as service.name for service in serviceList" placeholder="Search for services..." bs-typeahead autocomplete="off">
+          <span class="color-black glyphicon glyphicon-arrow-right"></span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="right-inner-addon">
+          <input type="text" class="form-control" ng-model="selectedArea" placeholder="Enter the area..." autocomplete="off">
+          <span class="color-black glyphicon glyphicon-arrow-right"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div ng-show="!checkSelectSubCat" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+    <button type="button" ng-click="gotoBookNow()" class="btn btn-success">
+      Proceed&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-arrow-right"></span>
+    </button>
+  </div>
+</div>
+
+<div ng-show="checkSelectSubCat" class="container-fluid">
+  <div class="row text-center">
+    <h2>Finish your order</h2>
+  </div>
+  <div class="row book-now-row">
+    <div class="text-right col-xs-12 col-sm-4 col-md-4 col-lg-4">
+      <h3>When?</h3>
+    </div>
+
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+      <div class="row">
+        <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <input type="date" class="form-control" ng-model="bookDate" placeholder="Date">
+        </div>
+        <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <input type="time" class="form-control" ng-model="bookTime" placeholder="Time">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row book-now-row">
+    <div class="text-right col-xs-12 col-sm-4 col-md-4 col-lg-4">
+      <h3>Where?</h3>
+    </div>
+
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+      <div class="row">
+        <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <input type="text" class="form-control" ng-model="userName" placeholder="Name">
+        </div>
+        <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <input type="text" class="form-control" ng-model="houseNumber" placeholder="House No.">
+        </div>
+        <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <input type="text" class="form-control" ng-model="address1" placeholder="Street/Address lane 1">
+        </div>
+        <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <input type="text" class="form-control" ng-model="address2" placeholder="Address lane 2 (if any)">
+        </div>
+        <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <input type="text" class="form-control" ng-model="landmarks" placeholder="Landmarks (if any)">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row book-now-row">
+    <div class="text-right col-xs-12 col-sm-4 col-md-4 col-lg-4">
+      <h3>Contact info</h3>
+    </div>
+
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+      <div class="row">
+        <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <input type="email" class="form-control" ng-model="email" placeholder="Email">
+        </div>
+        <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <input type="text" class="form-control" ng-model="phoneNumber" placeholder="Phone No.">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row book-now-row">
+    <div class="text-right col-xs-12 col-sm-4 col-md-4 col-lg-4">
+      <h3>Additional comments</h3>
+    </div>
+
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+      <div class="row">
+        <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <textarea type="text" class="form-control" ng-model="additionalComments" placeholder="Additional comments (if any)"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row text-center">
+    <button class="btn btn-danger" ng-click="bookNow()">Get it done!</button>
+  </div>
+
+  <!-- Confirmation page -->
+  <div class="container-fluid">
+    <div class="row text-center">
+      <h3>Confirm your order</h3>
+    </div>
+      
+    <div class="row text-left">
+      <h4>Details</h4>
+      <h5>{{ recentTicket.selectedService.name }}</h5>
+      <h5>{{ recentTicket.selectedSubCat.name }}</h5>
+      <h5>{{ recentTicket.selectedCategory.name }}</h5>
+    </div>
+
+    <div class="row text-left">
+      <h4>When</h4>
+      <h5>{{ recentTicket.bookDate }}, {{ recentTicket.bookTime }}</h5>
+      <h5>{{ recentTicket.selectedSubCat.name }}</h5>
+      <h5>{{ recentTicket.selectedCategory.name }}</h5>
+    </div>
+
+    <div class="row text-left">
+      <h4>Est. cost</h4>
+      <h5>Rs. 500</h5>
+    </div>
+    
+  </div>
+    <!-- Confirmation page -->
+
+</div>
