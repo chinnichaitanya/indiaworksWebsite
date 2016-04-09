@@ -1,6 +1,7 @@
+<!-- 
 <div class="header" ng-controller="TopNavCtrl">
   <div class="navbar navbar-default" role="navigation">
-    <div class="container">
+    <div class="container-fluid">
       <div class="navbar-header">
 
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
@@ -21,6 +22,26 @@
           <li ng-class="{ active: isActive('/contact-us') }"><a ng-href="#!/contact-us">Contact</a></li>
         </ul>
       </div>
+    </div>
+  </div>
+</div>
+ -->
+
+<div class="container-fluid">
+  <div class="row top-nav">
+    <div class="topbar-first-nav">
+      <div class="container-fluid top-nav-brand">IndiaWorks</div>
+    </div>
+
+    <div class="topbar-center-nav">
+      <div class="container-fluid top-nav-center-element">Home</div>
+      <div class="container-fluid top-nav-center-element">Our services</div>
+      <div class="container-fluid top-nav-center-element">About us</div>
+      <div class="container-fluid top-nav-center-element">Blog</div>
+    </div>
+
+    <div class="topbar-last-nav">
+      <div class="container-fluid top-nav-end-element">Profile</div>
     </div>
   </div>
 </div>

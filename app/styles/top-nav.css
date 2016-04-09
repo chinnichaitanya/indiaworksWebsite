@@ -1,5 +1,5 @@
 /*modifyig the default bootstrap class*/
-.navbar {
+/*.navbar {
 	margin: 0;
 	border-radius: 0;
 	border: 0;
@@ -13,7 +13,7 @@
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #ffffff;
+  color: #b71c1c;
 }
 .navbar-default .navbar-text {
   color: #b71c1c;
@@ -23,13 +23,14 @@
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #ffffff;
+  color: #b71c1c;
+  border-bottom: 5px solid #b71c1c;
+  border-bottom: 5px solid rgba(183, 28, 28, 0.5);
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #b71c1c;
-  /*background-color: #b71c1c;*/
   border-bottom: 5px solid #b71c1c;
 }
 .navbar-default .navbar-nav > .open > a,
@@ -73,5 +74,34 @@
     color: #ffffff;
     background-color: #b71c1c;
   }
-}
+}*/
 /*modifyig the default bootstrap class*/
+
+/*new navbar classes start*/
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+.top-nav .topbar-center-nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.top-nav-brand {
+
+}
+.top-nav-center-element {
+  padding: 5% 3% 5% 3%;
+  width: 25%;
+}
+.top-nav-end-element {
+
+}
+/*new navbar classes end*/
