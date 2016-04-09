@@ -50,6 +50,11 @@ angular
         controller: 'ProfileCtrl',
         controllerAs: 'profile'
       })
+      .when('/book/:category', {
+        templateUrl: 'views/booking.html',
+        controller: 'BookingCtrl',
+        controllerAs: 'main'
+      })
       .otherwise({
         redirectTo: '/'
       });
