@@ -60,6 +60,11 @@ angular
         controller: 'TrackingCtrl',
         controllerAs: 'Track'
       })
+      .when('/bookingDetails/:ticketId', {
+        templateUrl: 'views/bookingDetails.html',
+        controller: 'BookingDetailsCtrl',
+        controllerAs: 'bookingDetails'
+      })
       .otherwise({
         redirectTo: '/'
       });
