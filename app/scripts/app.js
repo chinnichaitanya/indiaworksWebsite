@@ -55,6 +55,11 @@ angular
         controller: 'BookingCtrl',
         controllerAs: 'main'
       })
+      .when('/bookingDetails/:ticketId', {
+        templateUrl: 'views/bookingDetails.html',
+        controller: 'BookingDetailsCtrl',
+        controllerAs: 'bookingDetails'
+      })
       .otherwise({
         redirectTo: '/'
       });

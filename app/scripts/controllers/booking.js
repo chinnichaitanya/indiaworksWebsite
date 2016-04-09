@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('indiaworks16App')
-  .controller('BookingCtrl', function ($scope, localStorageService, $routeParams) {
+  .controller('BookingCtrl', function ($scope, localStorageService, $routeParams, $location) {
   	var tickets = [];
     if(localStorageService.get('bookedServices')) {
       tickets = localStorageService.get('bookedServices');
@@ -26,7 +26,7 @@ angular.module('indiaworks16App')
     $scope.additionalComments = '';
 
     $scope.checkSelectSubCat = false;
-    $scope.checkClickBookNow = false;
+    $scope.checkConfirm = false;
 
     $scope.categoryList = [{
       'name': 'Electrician',
@@ -105,6 +105,10 @@ angular.module('indiaworks16App')
       $scope.recentTicket = ticket;
 
       alert('Booked successfully');
+    };
+
+    $scope.confirmOrder = function () {
+        $location.path('/bookingDetails/' + 'yourId');
     };
 
   });
