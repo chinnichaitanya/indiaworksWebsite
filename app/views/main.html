@@ -1,25 +1,8 @@
 <div id="book-a-service" class="container-fluid color-black padding-bottom-10">
-  <div ng-show="!checkSelectCategory" class="row text-center padding-top-2">
-    <h2>Get your work done here</h2>
-  </div>
+  
   <div class="row text-center padding-top-2">
-    <div ng-show="!(checkSelectSubCat && checkSelectCategory)" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-      <p>
-        <span class="glyphicon glyphicon-map-marker"></span>
-        Current location: Chennai (change)
-      </p>
-    </div>
-
-    <!-- Select the category -->
-
-    <div ng-show="!checkSelectCategory" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-      <div class="right-inner-addon">
-        <input type="text" class="form-control" ng-model="selectedCategory" bs-options="category as category.name for category in categoryList" ng-keypress="keyPress($event)" placeholder="Search for categories..." bs-typeahead autocomplete="off">
-        <span class="color-black glyphicon glyphicon-arrow-right"></span>
-      </div>
-    </div> 
-
-    <!-- Select the category -->
+    
+    <div ng-include="'views/category-module.html'"></div>
 
     <!-- After selecting the category -->
     <div ng-show="checkSelectCategory && !checkSelectSubCat" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
