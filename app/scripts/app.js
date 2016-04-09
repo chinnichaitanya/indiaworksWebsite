@@ -53,7 +53,12 @@ angular
       .when('/book/:category', {
         templateUrl: 'views/booking.html',
         controller: 'BookingCtrl',
-        controllerAs: 'main'
+        controllerAs: 'Book'
+      })
+      .when('/track/:ticketId', {
+        templateUrl: 'views/tracking.html',
+        controller: 'TrackingCtrl',
+        controllerAs: 'Track'
       })
       .otherwise({
         redirectTo: '/'

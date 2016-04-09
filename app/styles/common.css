@@ -10,6 +10,16 @@ body {
 	overflow-x: hidden;
 }
 
+.display-block {
+	display: block;
+}
+.display-inline-block {
+	display: inline-block;
+}
+.display-table-cell {
+	display: table-cell;
+}
+
 /*
 .image-bottom img {
 	vertical-align: bottom;
@@ -39,6 +49,9 @@ body {
 
 }
 
+.background-color-white {
+	background-color: #ffffff;
+}
 .background-color-grey {
 	background-color: #212121;
 }
