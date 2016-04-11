@@ -50,7 +50,7 @@ angular
         controller: 'ProfileCtrl',
         controllerAs: 'profile'
       })
-      .when('/book/:category', {
+      .when('/book/:categoryId', {
         templateUrl: 'views/booking.html',
         controller: 'BookingCtrl',
         controllerAs: 'Book'

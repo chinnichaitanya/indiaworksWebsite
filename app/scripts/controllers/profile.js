@@ -23,15 +23,16 @@ angular.module('indiaworks16App')
   	}];
 
   	// populating details
+    function populateDetails () {
+      // Can optimize this code :/
+      var numProfileElements = $scope.profileElements.length;
+      for(var i=0; i<numProfileElements; i++) {
+        if($routeParams.view === $scope.profileElements[i].view) {
+          $scope.view = $scope.profileElements[i].view;
+        }
+      }
+    }
   	populateDetails();
-  	function populateDetails () {
-  		var numProfileElements = $scope.profileElements.length;
-  		for(var i=0; i<numProfileElements; i++) {
-  			if($routeParams.view === $scope.profileElements[i].view) {
-  				$scope.view = $scope.profileElements[i].view;
-  			}
-  		}
-  	}
 
   	// check for which profileElement is active
   	$scope.activeProfile = function (profileIndex) {

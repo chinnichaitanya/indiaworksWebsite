@@ -8,7 +8,7 @@
  * Controller of the indiaworks16App
  */
 angular.module('indiaworks16App')
-  .controller('MainCtrl', function ($scope, localStorageService) {
+  .controller('MainCtrl', function ($scope) {
   // .controller('MainCtrl', function ($scope, GeoLocationService) {
 
     $scope.changeServiceHoverImage = function () {
