@@ -2,21 +2,21 @@
 
 angular.module('indiaworks16App')
   .controller('BookingCtrl', function ($scope, $routeParams, $location, localStorageService, ApiService) {
-  	// var tickets = [];
+    // var tickets = [];
    //  if(localStorageService.get('bookedServices')) {
    //    tickets = localStorageService.get('bookedServices');
    //  } else {
    //    tickets = [];
    //  }
+    
+    $scope.subCatList = [];
+    $scope.serviceList = [];
 
     // ApiService.getSubCategoryAndServiceList()
-    ApiService.getSubCategoryList()
+    $scope.categoryId = $routeParams.categoryId;
+    ApiService.getSubCatsList($scope.categoryId)
       .then(function (response) {
-        $scope.subCatList = response.data;
-      });
-    ApiService.getServiceList()
-      .then(function (response) {
-        $scope.serviceList = response.data;
+        $scope.subCatList = response.data.subCategories;
       });
 
     $scope.selectedCategoryId = $routeParams.categoryId;
@@ -26,17 +26,30 @@ angular.module('indiaworks16App')
 
     $scope.bookDate = '';
     $scope.bookTime = '';
-    $scope.userName = '';
-    $scope.houseNumber = '';
-    $scope.address1 = '';
-    $scope.address2 = '';
-    $scope.landmarks = '';
-    $scope.email = '';
-    $scope.phoneNumber = '';
-    $scope.additionalComments = '';
+    $scope.userName = 'name';
+    $scope.houseNumber = 'house';
+    $scope.address1 = 'add1';
+    $scope.address2 = 'ad2';
+    $scope.landmarks = 'landmarks';
+    $scope.email = 'email';
+    $scope.phoneNumber = 'phone';
+    $scope.additionalComments = 'comments';
 
     $scope.checkSelectSubCat = false;
     $scope.checkConfirm = false;  
+    
+    // Populate the services for a selected sub-category
+    $scope.populateServies = function () {
+      if($scope.selectedSubCat._id) {
+        ApiService.getServicesList($scope.selectedSubCat._id)
+          .then(function (response) {
+            $scope.serviceList = response.data.services;
+          });        
+      } else {
+        // Required because we need to remove the services populated once the user removes the sub-cat selected
+        $scope.serviceList = [];
+      }
+    };
 
     $scope.gotoBookNow = function () {
       if($scope.selectedSubCat && $scope.selectedService && $scope.selectedArea) {
@@ -66,24 +79,21 @@ angular.module('indiaworks16App')
       ticket.additionalComments = $scope.additionalComments;
 
       console.log(ticket);
-
-      ApiService.createTicket(ticket)
-        .success(function (response) {
-          console.log(response);
-        })
-        .error(function (err) {
-          console.log(err);
-          alert('error');
-        });
-
+        
       $scope.checkClickBookNow = true;
       $scope.recentTicket = ticket;
-
-      alert('Booked successfully');
     };
 
     $scope.confirmOrder = function () {
-      $location.path('/bookingDetails/' + 'yourId');
+      var ticketId = '';
+      console.log($scope.recentTicket);
+      ApiService.createTicket($scope.recentTicket)
+        .then(function (response) {
+          console.log(response);
+          ticketId = response.data._id;
+          // Have to optimise this transition
+          $location.path('/bookingDetails/' + ticketId);
+        });
     };
 
   });

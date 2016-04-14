@@ -18,7 +18,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'mgcrea.ngStrap',
-    'LocalStorageModule'
+    'LocalStorageModule',
+    'duScroll'
   ])
   .config(function ($locationProvider) {
     $locationProvider.html5Mode(false);

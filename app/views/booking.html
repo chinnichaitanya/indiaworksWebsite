@@ -11,7 +11,7 @@
     <div class="row padding-bottom-10">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="right-inner-addon">
-          <input type="text" class="form-control" ng-model="selectedSubCat" bs-options="subCat as subCat.name for subCat in subCatList" placeholder="Search for sub-categories..." bs-typeahead autocomplete="off">
+          <input type="text" class="form-control" ng-model="selectedSubCat" ng-change="populateServies()" bs-options="subCat as subCat.name for subCat in subCatList" placeholder="Search for sub-categories..." bs-typeahead autocomplete="off">
           <span class="color-black glyphicon glyphicon-arrow-right"></span>
         </div>
       </div>

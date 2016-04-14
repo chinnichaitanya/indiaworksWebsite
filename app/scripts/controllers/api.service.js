@@ -20,17 +20,33 @@ angular.module('indiaworks16App')
           return response;
         });
       },
-      // getSubCategoryAndServiceList: function () {
-      //   return $http.get('').then(function (response) {
-      //     return response;
-      //   });        
-      // },
+      // Something wrong with this api in the server code
+      getSubCategoryAndServiceList: function (categoryId) {
+        return $http.get('http://localhost:8001/api/categories/populateSubCatServices/' + categoryId).then(function (response) {
+          return response;
+        });        
+      },
+      getSubCatsList: function (categoryId) {
+        return $http.get('http://localhost:8001/api/categories/populateSubCats/' + categoryId).then(function (response) {
+          return response;
+        });        
+      },
+      getServicesList: function (subCatId) {
+        return $http.get('http://localhost:8001/api/subCategories/populateServices/' + subCatId).then(function (response) {
+          return response;
+        });        
+      },
+      getTicketDetails: function (ticketId) {
+        return $http.get('http://localhost:8001/api/tickets/' + ticketId).then(function (response) {
+          return response;
+        });
+      },
       createTicket: function (data) {
+        console.log(data);
         return $http.post('http://localhost:8001/api/tickets', data).then(function (response) {
           return response;
         });        
       }
     };
-    
 
   });
