@@ -61,8 +61,8 @@ angular
         controller: 'TrackingCtrl',
         controllerAs: 'Track'
       })
-      .when('/bookingDetails/:ticketId', {
-        templateUrl: 'views/bookingDetails.html',
+      .when('/booking-details/:ticketId', {
+        templateUrl: 'views/booking-details.html',
         controller: 'BookingDetailsCtrl',
         controllerAs: 'bookingDetails'
       })

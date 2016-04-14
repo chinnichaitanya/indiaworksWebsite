@@ -92,7 +92,7 @@ angular.module('indiaworks16App')
           console.log(response);
           ticketId = response.data._id;
           // Have to optimise this transition
-          $location.path('/bookingDetails/' + ticketId);
+          $location.path('/booking-details/' + ticketId);
         });
     };
 
