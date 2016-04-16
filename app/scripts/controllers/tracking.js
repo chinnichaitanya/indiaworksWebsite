@@ -10,5 +10,6 @@ angular.module('indiaworks16App')
 				console.log(response);
 				$scope.ticketDetails = response.data;
 			});
+		
 
   });

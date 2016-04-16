@@ -1,5 +1,5 @@
-<!-- 
-<div class="header" ng-controller="TopNavCtrl">
+
+<!-- <div class="header" ng-controller="TopNavCtrl">
   <div class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -24,9 +24,38 @@
       </div>
     </div>
   </div>
-</div>
- -->
+</div> -->
 
+<div class="header" ng-controller="TopNavCtrl">
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+
+      <div class="row collapse navbar-collapse" id="js-navbar-collapse">
+        
+        <a class="col-sm-2 navbar-brand" href="#!/">IndiaWorks</a>
+
+        <ul class="col-sm-8 nav navbar-nav">
+          <li ng-class="{ active: isActive('/') }"><a href="#!/">Home</a></li>
+          <li ng-class="{ active: isActive('/about') }"><a ng-href="#!/about">About</a></li>
+          <li ng-class="{ active: isActive('/contact-us') }"><a ng-href="#!/contact-us">Contact</a></li>
+        </ul>
+
+        <a class="col-sm-2 navbar-brand">Profile</a>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 
 <div class="container-fluid">
   <div class="row top-nav">
     <div class="topbar-first-nav">
@@ -45,3 +74,4 @@
     </div>
   </div>
 </div>
+ -->
