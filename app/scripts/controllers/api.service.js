@@ -5,44 +5,48 @@ angular.module('indiaworks16App')
 
     // AngularJS will instantiate a singleton by calling "new" on this function
     return {
-      getCategoryList: function () {
-        return $http.get('http://localhost:8001/api/categories').then(function (response) {
+      getAllCategoryList: function (populateSubCategory, populateService) {
+        return $http.get('http://localhost:8001/api/categories/?sub_category=' + populateSubCategory + '&service=' + populateService).then(function (response) {
+          return response;
+        });        
+      },
+      getAllSubCategoryList: function (populateService) {
+        return $http.get('http://localhost:8001/api/subCategories/?service=' + populateService).then(function (response) {
           return response;
         });
       },
-      getSubCategoryList: function () {
-        return $http.get('http://localhost:8001/api/subCategories').then(function (response) {
-          return response;
-        });
-      },
-      getServiceList: function () {
+      getAllServiceList: function () {
         return $http.get('http://localhost:8001/api/services').then(function (response) {
           return response;
         });
       },
-      // Something wrong with this api in the server code
-      getSubCategoryAndServiceList: function (categoryId) {
-        return $http.get('http://localhost:8001/api/categories/populateSubCatServices/' + categoryId).then(function (response) {
+      getSingleCategory: function (categoryId, populateSubCategory, populateService) {
+        return $http.get('http://localhost:8001/api/categories/' + categoryId + '/?sub_category=' + populateSubCategory + '&service=' + populateService).then(function (response) {
           return response;
-        });        
+        });      
       },
-      getSubCatsList: function (categoryId) {
-        return $http.get('http://localhost:8001/api/categories/populateSubCats/' + categoryId).then(function (response) {
+      getSingleSubCat: function (subCatId, populateService) {
+        return $http.get('http://localhost:8001/api/sub-categories/' + subCatId + '&service=' + populateService).then(function (response) {
           return response;
-        });        
+        });         
       },
-      getServicesList: function (subCatId) {
-        return $http.get('http://localhost:8001/api/subCategories/populateServices/' + subCatId).then(function (response) {
+      getSingleService: function (serviceId) {
+        return $http.get('http://localhost:8001/api/services/' + serviceId).then(function (response) {
           return response;
-        });        
+        });
       },
-      getTicketDetails: function (ticketId) {
-        return $http.get('http://localhost:8001/api/tickets/' + ticketId).then(function (response) {
+      // Can club this with something like getAllTickets()? Or security issues?
+      getAllTicketDetailsByCurrentUser: function (populateSubCategory, populateService) {
+        return $http.get('http://localhost:8001/api/tickets/?sub_category=' + populateSubCategory + '&service=' + populateService).then(function (response) {
+          return response;
+        });
+      }, 
+      getSingleTicketDetails: function (ticketId, populateSubCategory, populateService) {
+        return $http.get('http://localhost:8001/api/tickets/' + ticketId + '/?sub_category=' + populateSubCategory + '&service=' + populateService).then(function (response) {
           return response;
         });
       },
       createTicket: function (data) {
-        console.log(data);
         return $http.post('http://localhost:8001/api/tickets', data).then(function (response) {
           return response;
         });        
