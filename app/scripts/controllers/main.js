@@ -24,4 +24,20 @@ angular.module('indiaworks16App')
     // 	console.log(x);
     // });
 
+    $scope.sampleServices = [{
+      'name': 'Carpentry',
+      'originalImg': 'images/carpentry-02-125x125.png',
+      'hoverImg': 'images/carpentry-02-hover-125x125.png'
+    },
+    {
+      'name': 'Plumbing',
+      'originalImg': 'images/plumbing-01-125x125.png',
+      'hoverImg': 'images/plumbing-01-onhover-125x125.png'
+    },
+    {
+      'name': 'Electricial',
+      'originalImg': 'images/electrical-03-125x125.png',
+      'hoverImg': 'images/electrical-hover-03-125x125.png'
+    }];
+
   });

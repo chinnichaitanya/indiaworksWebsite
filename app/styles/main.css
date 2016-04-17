@@ -25,6 +25,13 @@
   border-bottom: 2px solid #8c8c8c;
 }
 
+#sample-services .sample-service-img {
+  margin: 0 auto;
+}
+#sample-services .sample-service-img:hover {
+  cursor: pointer;
+}
+
 #about-us .img-responsive {
   margin: 0 auto;
 }

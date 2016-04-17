@@ -4,6 +4,7 @@
   </div>
 </div>
 
+<!-- 
 <div id="services-nav" class="container-fluid color-grey padding-top-1 padding-bottom-1">
   <div class="row">
     <div class="text-left col-xs-12 col-sm-4 col-md-4 col-lg-4">
@@ -16,7 +17,21 @@
       Blah 3
     </div>
   </div>
-</div>
+</div> -->
+
+<div id="sample-services" class="container-fluid text-center padding-top-3 padding-bottom-5">
+  <div class="row padding-bottom-2">
+    <h3>Our sample services</h3>
+  </div>
+  <div class="row">
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" ng-repeat="service in sampleServices track by $index" ng-init="service.displayImg=service.originalImg">
+      <span>
+        <img ng-mouseover="service.displayImg=service.hoverImg" ng-mouseout="service.displayImg=service.originalImg" class="img-responsive sample-service-img" ng-src="{{ service.displayImg }}" alt="{{ service.name }}">
+      </span>
+      <h4>{{ service.name }}</h4>
+    </div>
+  </div>
+</div>  
 
 <div id="about-us" class="container-fluid div-overlap-img text-center background-color-red color-white">
   <div class="row padding-top-5 padding-bottom-1">
@@ -116,14 +131,3 @@
   <service-template></service-template>
 </div>
  -->
-
-<!-- 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" ng-repeat="service in sampleServices track by $index" ng-init="service.displayImg=service.originalImg" ng-mouseover="service.displayImg=service.hoverImg" ng-mouseout="service.displayImg=service.originalImg">
-      <img class="img-responsive" ng-src="{{ service.displayImg }}" alt="{{ service.name }}">
-    </div>
-  </div>
-</div>
- -->
-
