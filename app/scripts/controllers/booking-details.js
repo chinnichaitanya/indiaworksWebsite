@@ -5,7 +5,7 @@ angular.module('indiaworks16App')
   	
     $scope.ticketId = $routeParams.ticketId;
     $scope.ticket = '';
-    ApiService.getTicketDetails($scope.ticketId)
+    ApiService.getSingleTicketDetails($scope.ticketId, true, true, true)
     	.then(function (response) {
     		console.log(response);
     		$scope.ticket = response.data;

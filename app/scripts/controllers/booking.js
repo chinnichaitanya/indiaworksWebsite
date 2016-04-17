@@ -14,7 +14,7 @@ angular.module('indiaworks16App')
 
     // ApiService.getSubCategoryAndServiceList()
     $scope.categoryId = $routeParams.categoryId;
-    ApiService.getSubCatsList($scope.categoryId)
+    ApiService.getSingleCategory($scope.categoryId, true, false)
       .then(function (response) {
         $scope.subCatList = response.data.subCategories;
       });
@@ -41,7 +41,7 @@ angular.module('indiaworks16App')
     // Populate the services for a selected sub-category
     $scope.populateServies = function () {
       if($scope.selectedSubCat._id) {
-        ApiService.getServicesList($scope.selectedSubCat._id)
+        ApiService.getSingleSubCategory($scope.selectedSubCat._id, true)
           .then(function (response) {
             $scope.serviceList = response.data.services;
           });        

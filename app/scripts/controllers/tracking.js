@@ -5,11 +5,10 @@ angular.module('indiaworks16App')
 		
 		$scope.ticketId = $routeParams.ticketId;
 		$scope.ticketDetails = {};
-		ApiService.getTicketDetails($scope.ticketId)
+		ApiService.getSingleTicketDetails($scope.ticketId, false, false, false)
 			.then(function (response) {
 				console.log(response);
 				$scope.ticketDetails = response.data;
 			});
-		
 
   });

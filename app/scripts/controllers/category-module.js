@@ -4,7 +4,7 @@ angular.module('indiaworks16App')
   .controller('CategoryModuleCtrl', function ($scope, $location, ApiService) {
     $scope.selectedCategory = '';
 
-    ApiService.getCategoryList()
+    ApiService.getAllCategoryList(false, false)
       .then(function (response) {
         console.log(response);
         

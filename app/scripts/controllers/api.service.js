@@ -10,25 +10,25 @@ angular.module('indiaworks16App')
           return response;
         });        
       },
-      getAllSubCategoryList: function (populateService) {
-        return $http.get('http://localhost:8001/api/subCategories/?service=' + populateService).then(function (response) {
-          return response;
-        });
-      },
-      getAllServiceList: function () {
-        return $http.get('http://localhost:8001/api/services').then(function (response) {
-          return response;
-        });
-      },
       getSingleCategory: function (categoryId, populateSubCategory, populateService) {
         return $http.get('http://localhost:8001/api/categories/' + categoryId + '/?sub_category=' + populateSubCategory + '&service=' + populateService).then(function (response) {
           return response;
         });      
       },
-      getSingleSubCat: function (subCatId, populateService) {
-        return $http.get('http://localhost:8001/api/sub-categories/' + subCatId + '&service=' + populateService).then(function (response) {
+      getAllSubCategoryList: function (populateService) {
+        return $http.get('http://localhost:8001/api/sub-categories/?service=' + populateService).then(function (response) {
+          return response;
+        });
+      },
+      getSingleSubCategory: function (subCatId, populateService) {
+        return $http.get('http://localhost:8001/api/sub-categories/' + subCatId + '?service=' + populateService).then(function (response) {
           return response;
         });         
+      },
+      getAllServiceList: function () {
+        return $http.get('http://localhost:8001/api/services').then(function (response) {
+          return response;
+        });
       },
       getSingleService: function (serviceId) {
         return $http.get('http://localhost:8001/api/services/' + serviceId).then(function (response) {
@@ -36,13 +36,13 @@ angular.module('indiaworks16App')
         });
       },
       // Can club this with something like getAllTickets()? Or security issues?
-      getAllTicketDetailsByCurrentUser: function (populateSubCategory, populateService) {
-        return $http.get('http://localhost:8001/api/tickets/?sub_category=' + populateSubCategory + '&service=' + populateService).then(function (response) {
+      getAllTicketDetailsByCurrentUser: function (populateCategory, populateSubCategory, populateService) {
+        return $http.get('http://localhost:8001/api/tickets/?category=' + populateCategory + '&sub_category=' + populateSubCategory + '&service=' + populateService).then(function (response) {
           return response;
         });
       }, 
-      getSingleTicketDetails: function (ticketId, populateSubCategory, populateService) {
-        return $http.get('http://localhost:8001/api/tickets/' + ticketId + '/?sub_category=' + populateSubCategory + '&service=' + populateService).then(function (response) {
+      getSingleTicketDetails: function (ticketId, populateCategory, populateSubCategory, populateService) {
+        return $http.get('http://localhost:8001/api/tickets/' + ticketId + '?category=' + populateCategory + '&sub_category=' + populateSubCategory + '&service=' + populateService).then(function (response) {
           return response;
         });
       },
