@@ -45,7 +45,8 @@ angular.module('indiaworks16App')
     // change the details on clicking profile-menu
     $scope.changeProfileContent = function (profileIndex) {
       // populate content here
-      
+      console.log('profile?view=' + $scope.profileElements[profileIndex].view);
+      $location.path('profile?view=' + $scope.profileElements[profileIndex].view);
     };
 
   });
