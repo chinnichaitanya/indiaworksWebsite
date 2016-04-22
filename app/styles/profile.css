@@ -8,21 +8,21 @@
 	border-right: 3px solid #b71c1c;
 }
 
-.yyy {
+.profile-category-parent-div {
 	padding : 0;
 }
-.xxx {
+.profile-category-top-module {
 	padding: 3% 0 10% 0;
 	background-color: black;
 }
-.zzz {
+.profile-category-bottom-module {
 	padding: 5% 0 5% 0;
 	background-color: red;
 }
-.lol-image img {
+.profile-image img {
 	width: 100%;
 }
-.lol-image {
+.profile-image {
 	position: absolute;
 	margin-top: -4%;
 	right: 46%;

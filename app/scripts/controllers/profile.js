@@ -46,7 +46,7 @@ angular.module('indiaworks16App')
     $scope.changeProfileContent = function (profileIndex) {
       // populate content here
       console.log('profile?view=' + $scope.profileElements[profileIndex].view);
-      $location.path('profile?view=' + $scope.profileElements[profileIndex].view);
+      $location.path('profile').search({view: $scope.profileElements[profileIndex].view});
     };
 
   });
